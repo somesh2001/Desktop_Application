@@ -5,10 +5,10 @@ manged the data of farmers. Broker also used to manage the availability of the �
 they(brokers) have. There is no clear way of recording the data of the “loan” given to the farmer
 and the “crops” which broker sells and purchases from the farmer. There is not the proper
 billing system for the farmer when farmer takes the loan. Objectives
-➢ To create the loan management system for farmers.
-➢ To manage the details of user, details about the loan taken by the user.
-➢ To create the system which manages the availability of crops.
-➢ To manage the record of sold and buy crops
+1. To create the loan management system for farmers.
+2. To manage the details of user, details about the loan taken by the user.
+3. To create the system which manages the availability of crops.
+4. To manage the record of sold and buy crops
 
 ## Functional Requirement
 ➢ The system shall take the details of the user about loan
