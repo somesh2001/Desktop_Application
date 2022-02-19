@@ -40,3 +40,8 @@ billing system for the farmer when farmer takes the loan. Objectives
 ## Loan Page
 
 ![Screenshot (87)](https://user-images.githubusercontent.com/56119880/154803121-8d3dd7aa-9e46-4971-83ea-fab860bd5f7f.png)
+
+## Finance Page
+
+![Screenshot (90)](https://user-images.githubusercontent.com/56119880/154803197-b121c29c-9f03-445b-9555-67762820f3a4.png)
+
