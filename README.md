@@ -1,4 +1,4 @@
-# Desktop_Application
+# Desktop Application Using Electron JS
 ## Problem Statement
 There are brokers in the mandi which provide loan to the farmers brokers used to manually
 manged the data of farmers. Broker also used to manage the availability of the “crops”
