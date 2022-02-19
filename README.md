@@ -11,19 +11,24 @@ billing system for the farmer when farmer takes the loan. Objectives
 4. To manage the record of sold and buy crops
 
 ## Functional Requirement
-➢ The system shall take the details of the user about loan
-➢ The system shall calculate the interest based on the detail of the user
-➢ The system shall create the loan statement based on the detail of loan and user
-➢ The system shall keep the record of the loan given to the user
-➢ The system shall add new user to the records
-➢ The system shall remove user from the records
-➢ The system shall calculate the profit of admin
-➢ The system shall keep the record of availability of crops
-➢ The system shall keep the record of buying and selling of crops
+1. The system shall take the details of the user about loan
+2. The system shall calculate the interest based on the detail of the user
+3. The system shall create the loan statement based on the detail of loan and user
+4. The system shall keep the record of the loan given to the user
+5. The system shall add new user to the records
+6. The system shall remove user from the records
+7. The system shall calculate the profit of admin
+8. The system shall keep the record of availability of crops
+9. The system shall keep the record of buying and selling of crops
 
 ## ER Diagram
 
 ![ER_Diagram](https://user-images.githubusercontent.com/56119880/154803001-eea8bf86-b3f0-4fa5-a8a6-b5b4adcc709d.png)
 
+## Relational Schema
+
+![Relational_schema](https://user-images.githubusercontent.com/56119880/154803071-a661bb01-3e8e-40c5-9e33-9a7712933444.png)
+
 ## Desktop Application Image
 ![Screenshot (85)](https://user-images.githubusercontent.com/56119880/154802896-5ccb0d7c-8d99-4597-a8c4-de2703c25662.png)
+
