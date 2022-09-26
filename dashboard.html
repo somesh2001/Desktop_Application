@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>sidebar</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style2.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <p style="width: 80px;height: 2px; position: absolute;background-color: white;margin-top: 110px;margin-left: 70px;">
+        </p>
+        <p style="width: 180px;height: 2px; position: absolute;background-color: white;margin-top: 160px;margin-left: 70px;">
+        </p>
+        <p class="company_name">Mandi</p>
+        <p class="company_name2">Management</p>
+        <nav class="nav">
+            <ul class="width">
+                <li class="containerp" onclick="changeframe('dashboard')">
+                    <a href="#"> <i class='bx bx-grid-alt'></i>Dashboard</a>
+                </li>
+                <li class="containerp" onclick="changeframe('Finance')">
+                    <a href="#"> <i class='bx bx-pie-chart-alt-2'></i>Finance </a>
+                </li>
+                <li onclick="changeframe('user')" class="containerp"><a href="#"><i class="bi-person-circle"></i>User</a></li>
+                <li onclick="changeframe('crops')" class="containerp"><a href="#"><i class="bi-cart-plus"></i>Crop</a></li>
+
+            </ul>
+        </nav>
+    </aside>
+    <section class="header">
+        <div class="main" id="main">
+            <div class="card">
+                <img src="fi.png" style="width:100%;height: 70%;padding-top: 20px;">
+                <div class="container">
+                    <button onclick="changeframe('Finance')" style="text-align: center;" class="button1">Finance</button>
+
+                </div>
+            </div>
+            <div class="card1">
+                <img src="farmer.gif" style="width:100%;height: 70%;">
+                <div class="container">
+                    <button style="text-align: center;" class="button1">Users</button>
+
+                </div>
+            </div>
+            <div class="card2">
+                <img src="cr.png" style="width:100%; height: 70%;">
+                <div class="container">
+                    <button style="text-align: center;" class="button1">Crops</button>
+
+                </div>
+            </div>
+        </div>
+        <!--<button>start now</button>-->
+        </div>
+    </section>
+    <!---------------------------display the dashboard-------------------------------------->
+    <div id="dashboard" style="display:none">
+        <div class="card">
+            <img src="fi.png" style="width:100%;height: 70%;padding-top: 20px;">
+            <div class="container">
+                <button onclick="changeframe('Finance')" style="text-align: center;" class="button1">Finance</button>
+
+            </div>
+        </div>
+        <div class="card1">
+            <img src="farmer.gif" style="width:100%;height: 70%;">
+            <div class="container">
+                <button onclick="changeframe('user')" style="text-align: center;" class="button1">Users</button>
+
+            </div>
+        </div>
+        <div class="card2">
+            <img src="cr.png" style="width:100%; height: 70%;">
+            <div class="container">
+                <button onclick="changeframe('crops')" style="text-align: center;" class="button1">Crops</button>
+
+            </div>
+
+        </div>
+        <!---------------------------end display the dashboard-------------------------------------->
+        <div id="Finance" style="display:none">
+
+            <button id="finance" onclick="changeframe('Finance')" style="text-align: center;" class="buttonf">Balance</button>
+            <button id="loan" onclick="changeframe('Loan')" style="text-align: center;" class="buttonf">Loan</button>
+            <div class="balance_card">
+                <p style="width: 12cm;height: 2px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 5.2cm;margin-left: 150px;">
+                </p>
+                <p style="width: 12cm;height: 2px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 3.4cm;margin-left: 150px;">
+                </p>
+                <p style="width: 12cm;height: 2px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 7.2cm;margin-left: 150px;">
+                </p>
+                <p style="width: 12cm;height: 2px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 9.2cm;margin-left: 150px;">
+                </p>
+                <p style="width: 12cm;height: 2px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 11cm;margin-left: 150px;">
+                </p>
+                <p style="width: 2px;height: 9cm; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 2cm;margin-left: 400px;">
+
+                    <h2 style="position: absolute; padding-left: 12cm;color:rgba(56, 53, 53, 0.699); padding-top: 1.5cm;" id="p1">total</h2>
+                    <h2 style="position: absolute; padding-left: 12cm;color:rgba(56, 53, 53, 0.699); padding-top: 3.5cm;" id="p2">disbursed</h2>
+                    <h2 style="position: absolute; padding-left: 12cm; color:rgba(56, 53, 53, 0.699);padding-top: 5.5cm;" id="p3">Buy Crop</h2>
+                    <h2 style="position: absolute; padding-left: 12cm;color:rgba(56, 53, 53, 0.699); padding-top: 7.5cm;" id="p4">Sell Crop</h2>
+                    <h2 style="position: absolute; padding-left: 12cm;color:rgba(56, 53, 53, 0.699); padding-top: 9.5cm;" id="p5">Total Payback</h2>
+                    <h2 style="position: absolute; padding-left: 4cm;color:rgba(56, 53, 53, 0.699); padding-top: 1.5cm;" class="pt1">Total Amount</h2>
+                    <h2 style="position: absolute; padding-left: 4cm;color:rgba(56, 53, 53, 0.699); padding-top: 3.5cm;" class="pt2">Disbursed Amount</h2>
+                    <h2 style="position: absolute; padding-left: 4cm;color:rgba(56, 53, 53, 0.699); padding-top: 5.5cm;" class="pt3">Buy Crops Amount</h2>
+                    <h2 style="position: absolute; padding-left: 4cm;color:rgba(56, 53, 53, 0.699); padding-top: 7.5cm;" class="pt3">Sold Crops Amount</h2>
+                    <h2 style="position: absolute; padding-left: 4cm;color:rgba(56, 53, 53, 0.699); padding-top: 9.5cm;" class="pt1">Total Payback</h2>
+
+                    <div class="container">
+                    </div>
+
+            </div>
+
+            <!-----------------------------------------------user data---------------------------->
+            <div id="user" style="display:none;position: absolute; margin-top: 1cm;">
+
+                <button id="finance" onclick="changeframe('Finance')" style="text-align: center; position:absolute; margin-left: 8cm; width: fit-content;" class="buttonf">User
+          Details</button>
+                <button id="finance" style="text-align: center; position:absolute; margin-left: 25cm; width: 5cm; margin-top: -10cm;" class="buttonfp" onclick="toggleLogin()">Remove User</button>
+                <div class="overlay">
+                    <div class="login">
+                        <div class="header-ppp">
+
+                            <h3>Remove User</h3>
+
+                        </div>
+                        <div class="body-ppp">
+                            <form action="#" class="form">
+                                <input id="delete_user" type="number" placeholder="Enter User number" required />
+
+                            </form>
+                        </div>
+                        <div class="footer-ppp">
+                            <button onclick="Remove_user(); changeframe('user')">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" style="overflow: scroll;"></div>
+
+            </div>
+            <!-----------------------------------------------crops data---------------------------->
+            <div id="crops" style="display:none;">
+
+                <button id="finance" onclick="changeframe('Finance')" style="text-align: center; position:absolute; margin-left: -8cm; width: fit-content; " class="buttonf">Crops
+          Details</button>
+                <button id="finance" onclick="changeframe('Buy_Sell')" style="text-align: center; position:absolute; margin-left: 4cm; width: fit-content;" class="buttonf">Buy and
+          Sell Crops</button>
+                <button id="finance" onclick="changeframe('sold_crops')" style="text-align: center; position:absolute; margin-left: 15.6cm; width: fit-content;" class="buttonf">Sold
+          Crops</button>
+                <button id="finance" onclick="changeframe('buy_crops')" style="text-align: center; position:absolute; margin-left: 25cm; width: 4cm;" class="buttonf">Buy
+          Crops</button>
+                <button id="finance" style="text-align: center; position:absolute; margin-left: 25cm; width: 4cm; margin-top: -10cm;" class="buttonfp" onclick="toggleLogin()">Add Crop</button>
+                <div class="overlay">
+                    <div class="login">
+                        <div class="header-ppp">
+                            <button class="buttonfc" style="margin-left: 15cm; position: absolute;" onclick="toggleLogin()">close</button>
+                            <h1>Add Crop</h1>
+
+                        </div>
+                        <div class="body-ppp">
+                            <form action="#" class="form">
+                                <input id="new_crop_name" type="text" placeholder="Enter Crop Name" required />
+                                <input id="new_quantity_name" type="number" placeholder="Enter Crop Quantity" required />
+                                <input id="new_price_name" type="number" placeholder="Enter Crop Price" required />
+                            </form>
+                        </div>
+                        <div class="footer-ppp">
+                            <button onclick="add_new_crop(); changeframe('crops')">Add</button>
+                        </div>
+                    </div>
+                </div>
+</body>
+<script>
+    function toggleLogin() {
+        document.querySelector(".overlay").classList.toggle("open");
+    }
+</script>
+<div id="tab3" style="overflow: scroll;"></div>
+
+</div>
+<!-----------------------------------------------sold crops data---------------------------->
+<div id="sold_crops" style="display:none">
+
+    <button id="finance" onclick="changeframe('Finance')" style="text-align: center; position:absolute; margin-left: -8cm; width: fit-content;" class="buttonf">Crops
+    Details</button>
+    <button id="finance" onclick="changeframe('Buy_Sell')" style="text-align: center; position:absolute; margin-left: 4cm; width: fit-content;" class="buttonf">Buy and
+    Sell Crops</button>
+    <button id="finance" onclick="changeframe('sold_crops')" style="text-align: center; position:absolute; margin-left: 15.6cm; width: fit-content;" class="buttonf">Sold
+    Crops</button>
+    <button id="finance" onclick="changeframe('buy_crops')" style="text-align: center; position:absolute; margin-left: 25cm; width: 4cm;" class="buttonf">Buy
+    Crops</button>
+    <div id="tab4" style="overflow: scroll; margin: 3cm;"></div>
+
+</div>
+<!-----------------------------------------------Buy crops data---------------------------->
+<div id="buy_crops" style="display:none;">
+
+    <button id="finance" onclick="changeframe('Finance')" style="text-align: center; position:absolute; margin-left: -8cm; width: fit-content;" class="buttonf">Crops
+    Details</button>
+    <button id="finance" onclick="changeframe('Buy_Sell')" style="text-align: center; position:absolute; margin-left: 4cm; width: fit-content;" class="buttonf">Buy and
+    Sell Crops</button>
+    <button id="finance" onclick="changeframe('sold_crops')" style="text-align: center; position:absolute; margin-left: 15.6cm; width: fit-content;" class="buttonf">Sold
+    Crops</button>
+    <button id="finance" onclick="changeframe('buy_crops')" style="text-align: center; position:absolute; margin-left: 25cm; width: 4cm;" class="buttonf">Buy
+    Crops</button>
+
+    <div id="tab5" style="overflow: scroll;"></div>
+
+</div>
+
+<!--------------------------loan page------------------------------------>
+<div id="Loan" style="display:none">
+
+    <button id="finance" onclick="changeframe('Finance')" style="text-align: center;" class="buttonf">Balance</button>
+    <button id="loan" onclick="changeframe('Finance')" style="text-align: center;" class="buttonf">Loan</button>
+    <div class="loan_card">
+        <div class="container_form">
+            <form name="myForm">
+                <div class="row">
+                    <div class="col-25 name">
+                        <i class="bi-person-circle"></i>
+                        <label for="fname">Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input style="margin-left: 15px;" type="text" id="fname" name="firstname" placeholder="Enter user name" required>
+                        <h3 id="demo1"></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <i class="bi-telephone"></i>
+                        <label for="lname">Contact</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" min="1" id="contact" name="lastname" placeholder="Enter contact number" required>
+                        <h3 id="demo2"></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <i class="bi-house-door"></i>
+                        <label for="country">Address</label>
+                    </div>
+                    <div class="col-75">
+
+                        <input type="text" id="address" name="lastname" placeholder="Enter Address" required>
+                        <h3 id="demo3"></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <i class="bi-card-heading"></i>
+                        <label for="subject">Adhaar</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" min="1" id="adhaar" name="lastname" placeholder="Enter Adhaar" required>
+                        <h3 id="demo4"></h3>
+                    </div>
+                </div>
+
+                <input onclick="add_user(); validatefname()" type="submit" value="Submit">
+                <input id="user_new_id" style="display: none;">
+        </div>
+        </form>
+
+    </div>
+
+</div>
+
+<!--------------------------loanprovider page------------------------------------>
+<div id="Loan_provider" style="display:none">
+
+    <button id="finance" onclick="changeframe('Finance')" style="text-align: center; margin-left: 4cm;" class="buttonf">Balance</button>
+    <button id="loan" onclick="changeframe('Finance')" style="text-align: center;  margin-left: 4cm" class="buttonf">Loan</button>
+    <div class="loan_card" style="width: 60%; height:70%; margin-left: 2cm;">
+        <div class="container_form">
+            <form name="myForm">
+                <div class="row">
+                    <div class="col-251 name ">
+                        <i class="bi-person-circle"></i>
+                        <label for="account">Account</label>
+                    </div>
+                    <div class="col-751">
+                        <input style="margin-left: 0px;" type="number" id="account" name="firstname" placeholder="Enter Acount number" required>
+                        <h3 id="demo1"></h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-251">
+                        <i class="bi-telephone"></i>
+                        <label for="lname">Tenure</label>
+                    </div>
+                    <div class="col-751">
+                        <select class="tenure" type="number" id="tenure" onchange="myFunction(event); myFunction2(event)" required>
+              <option disabled selected>Select Tenure</option>
+              <option value="1.5">1 Month</option>
+              <option value="2.9" id="month2">2 Months</option>
+              <option value="3.5" id="month3">3 Months</option>
+              <option value="4.9" id="month2">4 Months</option>
+              <option value="6.5" id="month3">6 Months</option>
+              <option value="7.9" id="month3">7 Months</option>
+              <option value="8" id="month3">8 Months</option>
+              <option value="9.3" id="month3">9 Months</option>
+
+            </select>
+
+                    </div>
+                </div>
+                <div class="row" style="display:none">
+                    <div class="col-251">
+                        <i class="bi-card-heading"></i>
+                        <label for="subject">Tenure</label>
+                    </div>
+                    <div class="col-751">
+                        <input type="number" class="tenure" id="myText2">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-251">
+                        <i class="bi-card-heading"></i>
+                        <label for="subject">Interest</label>
+                    </div>
+                    <div class="col-751">
+                        <input type="float" class="tenure" id="myText" required>
+                        <h3 id="demo2"></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-251">
+                        <i class="bi-card-heading"></i>
+                        <label for="subject">Amount</label>
+                    </div>
+                    <div class="col-751">
+                        <input id="amount" type="number" name="lastname" placeholder="Enter Amount" required>
+                        <h3 id="demo3"></h3>
+                    </div>
+                </div>
+
+                <input onclick="add_Loan(); validatefname2()" id="s1" type="submit" value="Submit">
+        </div>
+        </form>
+
+    </div>
+    <img src="invoicegif.gif" style="position: absolute; margin-left: 5.6cm; border-radius: 1%; width: 25%;height: 50%;">
+</div>
+<!---------------------------------------------Loan_invoice-------------------------------------------------------->
+
+
+<div id="Loan_invoice" style="display:none">
+
+
+    <button id="finance" onclick="changeframe('Finance')" style="text-align: center;  margin-left: 4cm" class="buttonf">Balance</button>
+    <button id="loan" onclick="changeframe('Loan')" style="text-align: center;  margin-left: 4cm" class="buttonf">Loan</button>
+    <button id="finance" onclick="printDiv()" style="text-align: center;  margin-left: 31cm; width: fit-content;height: fit-content;  " class="buttonf">Print</button>
+    <div class="Loan_invoice_card">
+        <p style="width: 8cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 3.5cm;margin-left: 1cm;">
+        </p>
+        <p style="width: 8.5cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 3.5cm;margin-left: 16cm;">
+        </p>
+        <p style="width: 8.5cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 2.1cm;margin-left: 16cm;">
+        </p>
+        <p style="width: 8cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 2.1cm;margin-left: 1cm;">
+        </p>
+        <p style="width: 10.5cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 6.5cm;margin-left: 1cm;">
+        </p>
+        <p style="width: 10.5cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 7.9cm;margin-left: 1cm;">
+        </p>
+        <p style="width: 10.5cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 9.3cm;margin-left: 1cm;">
+        </p>
+        <p style="width: 10.5cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 10.8cm;margin-left: 1cm;">
+        </p>
+        <p style="width: 8.2cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 6.5cm;margin-left: 16.5cm;">
+        </p>
+        <p style="width: 8.2cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 7.9cm;margin-left: 16.5cm;">
+        </p>
+        <p style="width: 8.2cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 10.8cm;margin-left: 16.5cm;">
+        </p>
+        <p style="width: 1px;height: 6cm; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 5cm;margin-left: 13.5cm;">
+        </p>
+        <p style="width: 8.2cm;height: 1px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 9.3cm;margin-left: 16.5cm;">
+        </p>
+        <!-- 
+    <p
+      style="width: 12cm;height: 2px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 6.8cm;margin-left: 150px;">
+    </p>
+    <p
+      style="width: 12cm;height: 2px; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 8.8cm;margin-left: 150px;">
+    </p>
+    <p
+      style="width: 2px;height: 6.8cm; position: absolute;background-color: rgba(56, 53, 53, 0.301);margin-top: 2cm;margin-left: 400px;">-->
+        <!--<p style="position: absolute; padding-left: 12cm; padding-top: 3cm; color: darkgrey;" id="loan_id">Loan Number</p>
+    <p style="position: absolute; padding-left: 12cm; padding-top: 5cm;" id="principal">disbursed</p>
+    <p style="position: absolute; padding-left: 12cm; padding-top: 7cm;" id="total">Profit</p>-->
+
+        <h2 style="position: absolute; padding-left: 6cm; padding-top: 5cm;;color: darkgrey; font-size:20px;" id="ac1">
+            12346567890</h2>
+        <h2 style="position: absolute; padding-left: 7cm; padding-top: 10.7cm;;color: darkgrey; font-size:20px;" id="ac1">
+            After </h2>
+        <h2 style="position: absolute; padding-left: 8.4cm; padding-top: 10.7cm;color: darkgrey;  font-size:20px;" id="ten1">
+            Tenure</h2>
+        <h2 style="position: absolute; padding-left: 8.8cm; padding-top: 10.7cm;color: darkgrey;  font-size:20px;">
+            Months 700 RS Late fees will be charged</h2>
+        <h2 style="position: absolute; padding-left: 6cm; padding-top: 6.4cm;;color: darkgrey; font-size:20px;" id="n1">Name
+        </h2>
+        <h2 style="position: absolute; padding-left: 6cm; padding-top: 7.8cm;;color: darkgrey; font-size:20px;" id="c1">
+            Contact</h2>
+        <h2 style="position: absolute; padding-left: 6cm; padding-top: 9.3cm;;color: darkgrey; font-size:20px;" id="a1">
+            Address</h2>
+        <h2 style="position: absolute; padding-left: 20cm; padding-top: 0.5cm;color: darkgrey; font-size:20px;" id="date">
+            Date</h2>
+
+
+        <h2 style="position: absolute; padding-left: 20cm; padding-top: 5cm;color: darkgrey; font-size:20px;" id="pr1">
+            Principal</h2>
+        <h2 style="position: absolute; padding-left: 20cm; padding-top: 6.4cm;color: darkgrey; font-size:20px;" id="i1">
+            Interest</h2>
+        <h2 style="position: absolute; padding-left: 20cm; padding-top: 9.3cm;color: darkgrey; font-size:20px;" id="t1">
+            Total</h2>
+        <h2 style="position: absolute; padding-left: 20.2cm; padding-top: 7.8cm;color: darkgrey;  font-size:20px;" id="ten11">
+            Tenure</h2>
+        <h2 style="position: absolute; padding-left: 20.5cm; padding-top: 7.8cm;color: darkgrey;  font-size:20px;">
+            Months</h2>
+        <h2 style="position: absolute; padding-left: 1cm; padding-top: 0.6cm;color: darkgrey; font-size:20px;" class="pt2">
+            Mandi Name - Mandsaur Mandi</h2>
+
+        <h2 style="position: absolute; padding-left: 1cm; padding-top: 2cm;color: darkgrey; font-size:20px;" class="pt2">
+            Liscence Number - AU71234</h2>
+        <h2 style="position: absolute; padding-left: 1cm; padding-top: 3.9cm;color: rgb(49, 48, 48);" class="pt2">User Information
+        </h2>
+        <h2 style="position: absolute; padding-left: 1cm; padding-top: 5cm;color: darkgrey;  font-size:20px;" class="pt3">
+            Account Number</h2>
+        <h2 style="position: absolute; padding-left: 1cm; padding-top: 6.4cm;color: darkgrey; font-size:20px;" class="pt3">
+            Name</h2>
+        <h2 style="position: absolute; padding-left: 1cm; padding-top: 7.8cm;color: darkgrey; font-size:20px;" class="pt3">
+            Contact</h2>
+        <h2 style="position: absolute; padding-left: 1cm; padding-top: 9.3cm;color: darkgrey; font-size:20px;" class="pt3">
+            Address</h2>
+        <h2 style="position: absolute; padding-left: 16cm; padding-top: 0.5cm;color: darkgrey; font-size:20px;" class="pt3">
+            Statement Date -</h2>
+        <h2 style="position: absolute; padding-left: 16cm; padding-top: 2cm;color: darkgrey; font-size:20px;" class="pt3">
+            Loan status - Current</h2>
+
+        <h2 style="position: absolute; padding-left: 16.5cm; padding-top: 3.9cm;color: rgb(49, 48, 48);" class="pt2">
+            Loan Information</h2>
+        <h2 style="position: absolute; padding-left: 16.5cm; padding-top: 5cm;color: darkgrey;  font-size:20px;" id="pf1">
+            Principal</h2>
+        <h2 style="position: absolute; padding-left: 16.5cm; padding-top: 6.4cm;color: darkgrey;  font-size:20px;" id="pf2">
+            Interest</h2>
+        <h2 style="position: absolute; padding-left: 16.5cm; padding-top: 9.3cm;color: darkgrey;  font-size:20px;" id="pf3">
+            Total</h2>
+        <h2 style="position: absolute; padding-left: 16.5cm; padding-top: 7.8cm;color: darkgrey;  font-size:20px;" id="pf3">
+            Tenure</h2>
+        <div class="container">
+        </div>
+
+    </div>
+
+</div>
+<!----------------------------------Buy and Sell Crop-------------------------------------->
+<div id="Buy_Sell" style="display:none;">
+
+    <button id="finance" onclick="changeframe('crops')" style="text-align: center; position:absolute; margin-left: -8cm; width: fit-content;" class="buttonf">Crops
+    Details</button>
+    <button id="finance" onclick="changeframe('Buy_Sell')" style="text-align: center; position:absolute; margin-left: 4cm; width: fit-content;" class="buttonf">Buy and
+    Sell Crops</button>
+    <button id="finance" onclick="changeframe('sold_crops')" style="text-align: center; position:absolute; margin-left: 15.6cm; width: fit-content;" class="buttonf">Sold
+    Crops</button>
+    <button id="finance" onclick="changeframe('Buy_crops')" style="text-align: center; position:absolute; margin-left: 25cm; width: 4cm;" class="buttonf">Buy
+    Crops</button>
+    <div class="loan_card" style="height:70%; margin-left: 2cm; margin-top: 3cm;" id="buy">
+        <div class="container_form">
+            <form name="myForm">
+                <div class="row">
+                    <div class="col-25 name ">
+                        <i class="bi-telephone"></i>
+
+                        <label for="account">Contact</label>
+                    </div>
+                    <div class="col-75">
+                        <input style="margin-left: 5px;" type="number" id="contact_crop" name="firstname" placeholder="Enter Contact number" required>
+                        <h3 id="demo1"></h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <i class="bi-person-circle"></i>
+                        <label for="lname">Crop</label>
+                    </div>
+                    <div class="col-75">
+                        <select style="margin-left: 20px;" class="tenure" type="number" id="ddlselect" onchange="myFunction3(event); myFunction4(event)">
+              <option disabled selected>Select Crop</option>
+              <option value="6000" name="Soyabean">Soyabean</option>
+              <option value="3000" name="Rice">Rice</option>
+              <option value="2100" name="Wheat">Wheat</option>
+              <option value="3500" name="Garlic">Garlic</option>
+              <option value="1500" name="Onions">Onions</option>
+
+
+            </select>
+                    </div>
+                </div>
+                <div class="row" style="display:none">
+                    <div class="col-25">
+                        <i class="bi-card-heading"></i>
+                        <label for="subject">Tenure</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" class="tenure" id="crop_name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <i class="bi-cash"></i>
+                        <label for="subject">Price</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" style="margin-left: 20px;" class="tenure" id="price" required>
+                        <h3 id="demo2"></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <i class="bi-card-heading"></i>
+                        <label for="subject">Quantity</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="quantity" type="number" style="margin-left: -5px;" name="lastname" placeholder="Enter Crop Quantity" required>
+                        <h3 id="demo3"></h3>
+                        <input id="date_new" type="number" style="margin-left: -5px; display: none;" name="lastname" placeholder="Enter Crop Quantity" required>
+                    </div>
+                </div>
+                <div class="row" style="display:none">
+                    <div class="col-25">
+                        <i class="bi-cash"></i>
+                        <label for="subject">Price</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" min="0" style="margin-left: 20px;" class="tenure" id="total" required>
+                    </div>
+                </div>
+
+                <input onclick="Buy_crop();validatefname3()" id="s1" type="submit" value="Buy">
+                <input onclick="sell_crop(); validatefname3()" id="s2" type="submit" value="Sell">
+
+        </div>
+        </form>
+
+    </div>
+    <div class="overlay">
+        <div class="login">
+            <div class="header-ppp">
+
+                <h3>Successfully fill the Details</h3>
+
+            </div>
+
+            <div class="footer-ppp">
+                <button onclick="changeframe('buy_crops')" style="margin-top: 1cm;">Done</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-------------------------------------popup ----------------------------------------->
+
+
+
+
+<!-----------------------------------------javascript code---------------------------------------------------->
+
+<script>
+    function changeframe(id) {
+        var x = document.getElementById("main");
+        x.innerHTML = document.getElementById(id).innerHTML;
+    }
+
+    function changeframe2(id) {
+        var x = document.getElementById("main");
+        x.innerHTML = document.getElementById(id).innerHTML;
+    }
+
+    function myFunction(id) {
+        document.getElementById("myText").value = id.target.value;
+    }
+
+    function myFunction2(id) {
+        document.getElementById("myText2").value = id.target.value[0];
+    }
+
+    function myFunction3(id) {
+        x = id.target.value;
+        if (x == 3000) {
+
+            document.getElementById("crop_name").value = "Rice";
+        }
+        if (x == 6000) {
+
+            document.getElementById("crop_name").value = "Soyabean";
+        }
+        if (x == 2100) {
+
+            document.getElementById("crop_name").value = "Wheat";
+        }
+        if (x == 3500) {
+
+            document.getElementById("crop_name").value = "Garlic";
+        }
+        if (x == 1500) {
+
+            document.getElementById("crop_name").value = "Onions";
+        }
+
+        /*   var quantity = document.getElementById("quantity").value;
+           var total = quantity * x;
+           console.log("loan = ",total);
+           var quantity = document.getElementById("total").innerHTML = total;*/
+
+
+    }
+
+    function myFunction4(id) {
+        document.getElementById("price").value = id.target.value;
+    }
+
+    function print_fun() {
+        window.print();
+    }
+    var mysql = require("mysql");
+
+
+    /**************user data into table*********************/
+
+    function tableshow() {
+        var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new",
+        });
+        con.connect(function(err) {
+            if (err) throw err;
+            con.query("SELECT u.user_id, u.user_name, u.address, u.contact,l.Principal, l.Total_amount ,l.payed_amount from users as u, loan_new as l, user_loan as ul WHERE ul.user_id=u.user_id and l.loan_id=ul.loan_user_id;", function(err, result) {
+                if (err) throw err;
+                console.log(result);
+                var string = JSON.stringify(result);
+                var json = JSON.parse(string);
+                console.log(json);
+                let table = '<table border="1" class="content-table-u">';
+                table += "<tr><th>user Id</th><th>Name</th><th>address</th><th>Contact</th><th>Principal</th><th>Total Amount</th><th>Payed</th></tr></tr>";
+
+                var x = json.length;
+
+                for (var i = 0; i < x; i++) {
+                    table = table + "<tr>";
+                    table = table + `<td>${json[i].user_id}</td>`;
+                    table = table + `<td>${json[i].user_name}</td>`;
+                    table = table + `<td>${json[i].address}</td>`;
+                    table = table + `<td>${json[i].contact}</td>`;
+                    table = table + `<td>${json[i].Principal}</td>`;
+                    table = table + `<td>${json[i].Total_amount}</td>`;
+                    table = table + `<td>${json[i].payed_amount}</td>`;
+                    table += `</tr>`;
+                }
+
+                table += "</table>";
+                document.getElementById("tab2").innerHTML = table;
+
+            });
+        });
+
+    }
+
+    tableshow();
+    /**************crops data into table*********************/
+
+    function cropsdata() {
+        var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new",
+        });
+        con.connect(function(err) {
+            if (err) throw err;
+            con.query("SELECT * FROM available_crops_new", function(err, result) {
+                if (err) throw err;
+                console.log(result);
+                var string = JSON.stringify(result);
+                var json = JSON.parse(string);
+                console.log(json);
+                let table = '<table border="1" class="content-table-ac">';
+                table += "<tr><th>Crop Id</th><th>Crop Name</th><th>Quantity</th><th>Price Per Quintal</th></tr>";
+
+                var x = json.length;
+
+                for (var i = 0; i < x; i++) {
+                    table = table + "<tr>";
+                    table = table + `<td>${json[i].crop_id}</td>`;
+                    table = table + `<td>${json[i].crop_name}</td>`;
+                    table = table + `<td>${json[i].quantity}</td>`;
+                    table = table + `<td>${json[i].price}</td>`;
+
+                    table += `</tr>`;
+                }
+
+                table += "</table>";
+                document.getElementById("tab3").innerHTML = table;
+
+            });
+        });
+
+    }
+
+    cropsdata();
+
+    var sold_price;
+    var buy_price
+
+    /***************************finance_data*******************************/
+    function finance() {
+        var con1 = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new",
+        });
+        con1.connect(function(err) {
+            if (err) throw err;
+            con1.query("SELECT * FROM finance", function(err, result) {
+                if (err) throw err;
+                console.log(result);
+                var string = JSON.stringify(result);
+                var json = JSON.parse(string);
+                console.log(json);
+                var t1 = json[0].total_balance;
+                var t3 = json[0].disbursed_amount;
+                var t4 = json[0].buy_crop;
+                var t5 = json[0].sold_crop;
+                document.getElementById("p1").innerHTML = t1;
+
+                document.getElementById("p2").innerHTML = t3;
+
+                document.getElementById("p3").innerHTML = t4;
+                document.getElementById("p4").innerHTML = t5;
+
+            });
+
+
+            con1.query("SELECT * FROM buy_sell_price", function(err, result) {
+                if (err) throw err;
+                console.log(result);
+                var string = JSON.stringify(result);
+                var json = JSON.parse(string);
+                console.log(json);
+                var t1 = json[0].buy_price;
+                var t3 = json[0].sell_price;
+                var t4 = json[0].pay_back;
+                document.getElementById("p3").innerHTML = t1;
+                document.getElementById("p4").innerHTML = t3;
+                document.getElementById("p5").innerHTML = t4;
+
+                var sql = "select sum(Total_amount) as totaL from loan_new;";
+                con1.query(sql, function(err, result) {
+                    if (err) throw err;
+                    console.log("total_Amount = ", result);
+                    var userId = JSON.stringify(result);
+                    var json1 = JSON.parse(userId);
+                    var som = json1[0].totaL;
+
+                    console.log("total_Ampount = ", som);
+
+
+                    var sql2 = "select sum(Principal) as principal from loan_new;";
+                    con1.query(sql2, function(err, result) {
+                        if (err) throw err;
+                        var userId = JSON.stringify(result);
+                        var json = JSON.parse(userId);
+                        var som2 = json[0].principal;
+
+                        console.log("Principal = ", som2);
+                        var ttop = parseInt(som) - parseInt(som2);
+                        console.log(ttop);
+                        var sql3 = 'UPDATE finance set profit = profit+ ' + ttop + ' ;';
+                        con1.query(sql3, function(err, result) {
+                            if (err) throw err;
+
+                            console.log("Principal = ", result);
+
+                        });
+                    });
+                });
+
+
+            });
+
+        });
+
+    }
+    finance();
+
+
+    function validatefname() {
+        const x = document.forms["myForm"]["fname"].value;
+        var numbers = /[0-9]/g;
+        if (x == "") {
+            document.getElementById("demo1").innerHTML = "Name must be filled out";
+
+
+        } else if (x.length < 4 || x.length > 10) {
+            document.getElementById("demo1").innerHTML = "Name must be more than 4 character ";
+
+        } else {
+            document.getElementById("demo1").innerHTML = "";
+        }
+        var contact = document.forms["myForm"]["contact"].value;
+
+        if (contact == "") {
+            document.getElementById("demo2").innerHTML = "Contact must be filled out";
+
+
+        } else if (contact.length < 10) {
+            document.getElementById("demo2").innerHTML = "Please Enter correct Mobile Number";
+
+        } else {
+            document.getElementById("demo2").innerHTML = "";
+
+        }
+        var Address = document.forms["myForm"]["address"].value;
+
+        if (Address == "") {
+            document.getElementById("demo3").innerHTML = "Address must be filled out"
+
+        } else if (Address.length < 4 || Address.length > 10) {
+            document.getElementById("demo3").innerHTML = "Address must be more than 4 character ";
+
+        } else {
+            document.getElementById("demo3").innerHTML = "";
+
+        }
+        var Adhaar = document.forms["myForm"]["adhaar"].value;
+
+        if (Adhaar == "") {
+            document.getElementById("demo4").innerHTML = "Adhaar must be filled out"
+
+
+        } else if (Adhaar.length < 12) {
+            document.getElementById("demo4").innerHTML = "Adhaar should be of 12 character ";
+
+        } else {
+            document.getElementById("demo4").innerHTML = "";
+
+        }
+    }
+
+    var new_user;
+    var new_loan;
+
+    var contact = document.getElementById("contact").value;
+    /***********************user to database**********************/
+
+    function add_user(event) {
+
+        var name = document.getElementById("fname").value;
+        var contact = document.getElementById("contact").value;
+        var address = document.getElementById("address").value;
+        var adhaar = document.getElementById("adhaar").value;
+
+
+        console.log(name);
+        console.log(contact);
+        console.log(address);
+        console.log(adhaar);
+
+        document.getElementById('n1').innerHTML = name;
+
+        document.getElementById('c1').innerHTML = contact;
+
+        document.getElementById('a1').innerHTML = address;
+        var con2 = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new"
+        });
+
+        con2.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            //Insert a record in the "customers" table:
+            if (name != '' && contact != '' && address != '' && adhaar != '') {
+                changeframe2("Loan_provider");
+                var sql = 'INSERT INTO users(user_name, address, contact, adhaar) VALUES ("' + name + '","' + address + '","' + contact + '","' + adhaar + '");';
+                var sql2 = 'SELECT user_id FROM users where contact = "' + contact + '";';
+                add_Loan();
+
+            }
+            con2.query(sql, function(err, result) {
+                if (err) throw err;
+                console.log("1 record inserted");
+
+
+            });
+            con2.query(sql2, function(err, result) {
+                if (err) throw err;
+                var userId = JSON.stringify(result);
+                var json = JSON.parse(userId);
+                var final = json[0].user_id;
+                new_user = final;
+                console.log("final = ", final);
+
+                console.log("cn=", contact);
+                console.log("1 record inserted");
+
+            });
+
+
+        });
+        if (name != '' && contact != '' && address != '' && adhaar != '') {
+            changeframe2("Loan_provider");
+        }
+    }
+
+
+
+    function validatefname2() {
+        const x = document.forms["myForm"]["account"].value;
+
+        if (x == "") {
+            document.getElementById("demo1").innerHTML = "Account number must be filled out";
+
+
+        } else if (x.length < 6) {
+            document.getElementById("demo1").innerHTML = "Account must be more than 6 digits ";
+
+        } else {
+            document.getElementById("demo1").innerHTML = "";
+        }
+        var contact = document.forms["myForm"]["myText"].value;
+
+        if (contact == "") {
+            document.getElementById("demo2").innerHTML = "Interest must be filled out";
+
+
+        } else {
+            document.getElementById("demo2").innerHTML = "";
+
+        }
+
+        var con1 = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new",
+        });
+        con1.connect(function(err) {
+            if (err) throw err;
+            con1.query("SELECT * FROM finance", function(err, result) {
+                if (err) throw err;
+                console.log(result);
+                var string = JSON.stringify(result);
+                var json = JSON.parse(string);
+                console.log(json);
+                var t1 = json[0].total_balance;
+
+                var Amount = document.forms["myForm"]["amount"].value;
+
+                if (Amount == "") {
+                    document.getElementById("demo3").innerHTML = "Amount must be filled out"
+
+                } else if (Amount > t1) {
+                    document.getElementById("demo3").innerHTML = "Sufficient Amount is not Available"
+
+                } else {
+                    document.getElementById("demo3").innerHTML = "";
+
+                }
+
+            });
+
+        });
+
+
+    }
+    /***********************loan to database**********************/
+    function add_Loan(event) {
+
+
+        var account = document.getElementById("account").value;
+        var tenure = document.getElementById("myText2").value;
+        var interest = document.getElementById("myText").value;
+        var amount = document.getElementById("amount").value;
+
+        /*************convert data to intiger********/
+        var new_account = parseInt(account);
+        var new_tenure = parseInt(tenure);
+        var new_interest = parseFloat(interest);
+        var new_amount = parseInt(amount);
+
+        var total = new_amount + ((new_amount * new_interest) / 100);
+
+        document.getElementById('pr1').innerHTML = amount;
+
+        document.getElementById('i1').innerHTML = interest;
+
+        document.getElementById('t1').innerHTML = total;
+        document.getElementById('ac1').innerHTML = account;
+        document.getElementById('ten1').innerHTML = new_tenure;
+        document.getElementById('ten11').innerHTML = new_tenure;
+        let currentDate = new Date();
+        let cDay = currentDate.getDate();
+        let cMonth = currentDate.getMonth() + 1;
+        let cYear = currentDate.getFullYear();
+        let date = cDay + "/" + cMonth + "/" + cYear;
+        console.log(date);
+        document.getElementById('date').innerHTML = date;
+
+
+        var con3 = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+
+            database: "desktop_new"
+        });
+        console.log(amount);
+        con3.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            //Insert a record in the "customers" table:
+            if (account != '' && tenure != '' && interest != '' && amount != '') {
+                console.log("Connected! data");
+
+                var sql = 'INSERT INTO loan_new(Total_amount,Principal,Tenure, Account_number,Interest) VALUES ("' + total + '","' + new_amount + '","' + new_tenure + '","' + new_account + '","' + new_interest + '");';
+                var sql4 = 'UPDATE finance f SET f.total_balance = f.total_balance- "' + new_amount + '";';
+                var sql2 = 'UPDATE finance f SET f.disbursed_amount = f.disbursed_amount+"' + new_amount + '";';
+                console.log("account = ", new_account);
+                var sql3 = 'SELECT loan_id FROM loan_new where Account_number = "' + new_account + '";';
+
+            }
+            con3.query(sql, function(err, result) {
+                if (err) throw err;
+                console.log("1 record inserted");
+                tableshow();
+
+            });
+            con3.query(sql2, function(err, result) {
+                if (err) throw err;
+                console.log("1 record inserted");
+                tableshow();
+            });
+            con3.query(sql4, function(err, result) {
+                if (err) throw err;
+                console.log("disbursed_amount updated");
+            });
+            con3.query(sql3, function(err, result) {
+                if (err) throw err;
+                var userId2 = JSON.stringify(result);
+                var json2 = JSON.parse(userId2);
+                console.log("final = ", json2);
+                var final2 = json2[0].loan_id;
+                new_loan = final2;
+                console.log("loan = ", new_loan)
+
+                var sql4 = 'INSERT into user_loan(user_id,loan_user_id) VALUES("' + new_user + '","' + final2 + '");';
+                con3.query(sql4, function(err, result) {
+
+                    console.log("1 loan inserted");
+                    finance();
+                    tableshow();
+
+                });
+                console.log("1 record inserted");
+
+            });
+            /*  var total = document.getElementById('pr1').value;
+        console.log(total);
+        var total_2 = document.getElementById('t1').value;
+        console.log(total_2);
+        var popl = parseInt(total_2) - parseInt(total);
+        console.log(popl)
+        var sql8 = 'UPDATE finance f SET f.profit = f.profit + "' + popl + '";';
+        con3.query(sql8, function (err, result) {
+          if (err) throw err;
+          var userId = JSON.stringify(result);
+          var json = JSON.parse(userId);
+        
+          console.log("total_profit = ", json);
+          console.log("1 record inserted");
+      
+      });
+  */
+
+        });
+        if (account != '' && tenure != '' && interest != '' && amount != '') {
+            changeframe2("Loan_invoice");
+        }
+    }
+    //changeframe2("Loan_invoice");
+    var date = new Date();
+
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    var hr = date.getHours();
+    var min = date.getMinutes();
+    var sec = date.getSeconds();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day + " " + hr + ":" + min + ":" + sec;
+    var pp = document.getElementById('date_new').value;
+    pp = today;
+    console.log("date = ", pp);
+
+    /***********************sell to database**********************/
+    function sell_crop(event) {
+
+
+        var user_contact = document.getElementById("contact_crop").value;
+        var price = document.getElementById("price").value;
+        var crop_name = document.getElementById("crop_name").value;
+        var quantity = document.getElementById("quantity").value;
+
+        /*************convert data to intiger********/
+
+        var new_quantity = parseInt(quantity);
+        var new_price = parseFloat(price);
+        console.log(user_contact);
+        console.log(crop_name);
+        console.log(new_quantity);
+        console.log(new_price);
+
+        var total_money = new_quantity * new_price;
+
+        document.getElementById('date').innerHTML = date;
+
+        var con3 = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new"
+        });
+        console.log(amount);
+        con3.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            //Insert a record in the "customers" table:
+            if (user_contact != '' && crop_name != '' && new_quantity != '' && new_price != '') {
+                console.log("Connected! data");
+
+                var sql = 'INSERT INTO sold_crop_new(crop_name,user_contact,quantity, price, Date) VALUES ("' + crop_name + '","' + user_contact + '","' + new_quantity + '","' + new_price + '","' + pp + '");';
+                var sql2 = 'UPDATE available_crops_new ac SET ac.quantity=ac.quantity-"' + parseInt(new_quantity) + '" WHERE ac.crop_name="' + crop_name + '";';
+                var sql3 = 'UPDATE finance f SET f.total_balance = f.total_balance+ "' + parseInt(new_price) + '";';
+                var sql88 = 'UPDATE finance f SET f.sold_crop = f.sold_crop+ "' + parseInt(total_money) + '";';
+
+
+            }
+            con3.query(sql, function(err, result) {
+                if (err) throw err;
+                console.log("1 record inserted");
+
+            });
+            con3.query(sql2, function(err, result) {
+                if (err) throw err;
+                console.log("Available crop updated");
+                cropsdata();
+
+
+            });
+            con3.query(sql3, function(err, result) {
+                if (err) throw err;
+                console.log("Total Balance updated");
+                finance();
+
+            });
+
+            con3.query(sql88, function(err, result) {
+                if (err) throw err;
+                console.log("Total Balance updated");
+                finance();
+
+            });
+        });
+        /*  if (user_contact != '' && tenure != '' && interest != '' && amount != '') {
+            changeframe2("Loan_invoice");
+          }*/
+
+
+    }
+    // changeframe2("Loan_invoice");
+
+    function sell_crops_data() {
+        var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new",
+        });
+        con.connect(function(err) {
+            if (err) throw err;
+            con.query("SELECT * FROM sold_crop_new", function(err, result) {
+                if (err) throw err;
+                console.log(result);
+                var string = JSON.stringify(result);
+                var json = JSON.parse(string);
+                console.log(json);
+                let table = '<table border="1" class="content-table-ac">';
+                table += "<tr><th>Sold Id</th><th>Crop Name</th><th>Quantity</th><th>Price Per Quintal</th><th>Date</th></tr>";
+
+                var x = json.length;
+
+                for (var i = 0; i < x; i++) {
+                    table = table + "<tr>";
+                    table = table + `<td>${json[i].sold_id}</td>`;
+                    table = table + `<td>${json[i].crop_name}</td>`;
+                    table = table + `<td>${json[i].quantity}</td>`;
+                    table = table + `<td>${json[i].price}</td>`;
+                    table = table + `<td>${json[i].Date}</td>`;
+
+                    table += `</tr>`;
+                }
+
+                table += "</table>";
+                document.getElementById("tab4").innerHTML = table;
+
+            });
+        });
+
+    }
+
+    sell_crops_data();
+    /*interst = 2.5, principal amount = 20000, total amount = 20000+(20000 *2.5)/100 */
+    function sell_crop(event) {
+
+
+        var user_contact = document.getElementById("contact_crop").value;
+        var price = document.getElementById("price").value;
+        var crop_name = document.getElementById("crop_name").value;
+        var quantity = document.getElementById("quantity").value;
+
+        /*************convert data to intiger********/
+
+        var new_quantity = parseInt(quantity);
+        var new_price = parseFloat(price);
+        console.log(user_contact);
+        console.log(crop_name);
+        console.log(new_quantity);
+        console.log(new_price);
+
+        var total_money = new_quantity * new_price;
+
+
+
+
+        document.getElementById('date').innerHTML = date;
+
+        var con3 = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new"
+        });
+        console.log(amount);
+        con3.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            //Insert a record in the "customers" table:
+            if (user_contact != '' && crop_name != '' && new_quantity != '' && new_price != '') {
+                console.log("Connected! data");
+
+                var sql = 'INSERT INTO sold_crop_new(crop_name,user_contact,quantity, price, Date) VALUES ("' + crop_name + '","' + user_contact + '","' + new_quantity + '","' + new_price + '","' + pp + '");';
+                var sql2 = 'UPDATE available_crops_new ac SET ac.quantity=ac.quantity-"' + parseInt(new_quantity) + '" WHERE ac.crop_name="' + crop_name + '";';
+                var sql3 = 'UPDATE finance f SET f.total_balance = f.total_balance+ "' + parseInt(total_money) + '";';
+                var sql5 = 'UPDATE finance f SET f.sold_crop =  sold_crop +  "' + parseInt(total_money) + '";';
+            }
+            con3.query(sql, function(err, result) {
+                if (err) throw err;
+                console.log("1 record inserted");
+                sell_crops_data();
+
+
+            });
+            con3.query(sql2, function(err, result) {
+                if (err) throw err;
+                console.log("Available crop updated");
+                cropsdata();
+
+            });
+            con3.query(sql5, function(err, result) {
+                if (err) throw err;
+                console.log("sell_price crop updated");
+                cropsdata();
+
+            });
+            con3.query(sql3, function(err, result) {
+                if (err) throw err;
+                console.log("Total Balance updated");
+                finance();
+
+            });
+
+
+        });
+        if (user_contact != '' && crop_name != '' && new_quantity != '' && new_price != '') {
+            toggleLogin();
+        }
+
+    }
+
+
+
+    function validatefname3() {
+        const x = document.forms["myForm"]["contact_crop"].value;
+        var numbers = /[0-9]/g;
+        if (x == "") {
+            document.getElementById("demo1").innerHTML = " Mobile Number Name must be filled out";
+
+
+        } else if (x.length < 10) {
+            document.getElementById("demo2").innerHTML = "Please Enter correct Mobile Number";
+
+        } else {
+            document.getElementById("demo1").innerHTML = "";
+        }
+        var contact = document.forms["myForm"]["price"].value;
+
+        if (contact == "") {
+            document.getElementById("demo2").innerHTML = "price must be filled out";
+
+
+        } else if (contact.length <= 0) {
+            document.getElementById("demo2").innerHTML = "Please Enter correct Price";
+
+        } else {
+            document.getElementById("demo2").innerHTML = "";
+
+        }
+
+        var Adhaar = document.forms["myForm"]["quantity"].value;
+
+        if (Adhaar == "") {
+            document.getElementById("demo3").innerHTML = "quantity must be filled out"
+
+        } else if (Adhaar <= 0) {
+            document.getElementById("demo3").innerHTML = "Please Enter correct quantity";
+
+        } else {
+            document.getElementById("demo4").innerHTML = "";
+
+        }
+    }
+    //***********************************************buy crops*************************************
+    var invoice_user;
+    var invoice_loan;
+    var buy_crop_price;
+    var sold_crop_price;
+
+    function Buy_crop(event) {
+
+
+        var user_contact = document.getElementById("contact_crop").value;
+        var price = document.getElementById("price").value;
+        var crop_name = document.getElementById("crop_name").value;
+        var quantity = document.getElementById("quantity").value;
+
+
+        /*************convert data to intiger********/
+
+        var new_quantity = parseInt(quantity);
+        var new_price = parseFloat(price);
+        console.log(user_contact);
+        console.log(crop_name);
+        console.log(new_quantity);
+        console.log(new_price);
+
+        var total_money = new_quantity * new_price;
+        var total_money2 = parseInt(total_money);
+
+        document.getElementById("total").innerHTML = total_money;
+
+        document.getElementById('date').innerHTML = date;
+        console.log(total_money);
+
+        var con3 = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new"
+        });
+        console.log(amount);
+        con3.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            //Insert a record in the "customers" table:
+            if (user_contact != '' && crop_name != '' && new_quantity != '' && new_price != '') {
+                console.log("Connected! data");
+
+                var sql = 'INSERT INTO buy_crop_new(crop_name,user_contact,quantity, price, Date) VALUES ("' + crop_name + '","' + user_contact + '","' + new_quantity + '","' + new_price + '","' + pp + '");';
+                var sql2 = 'UPDATE available_crops_new ac SET ac.quantity=ac.quantity+"' + new_quantity + '" WHERE ac.crop_name="' + crop_name + '";';
+                var sql3 = 'UPDATE finance f SET f.total_balance = f.total_balance- "' + total_money2 + '";';
+                var sql4 = 'SELECT user_id FROM users where contact = "' + user_contact + '";';
+                var sql5 = 'UPDATE buy_sell_price set buy_price =  buy_price +  "' + total_money2 + '";';
+                var sql6 = 'UPDATE finance f SET f.buy_crop = f.buy_crop+ "' + total_money2 + '";';
+            }
+            con3.query(sql, function(err, result) {
+                if (err) throw err;
+                console.log("1 record inserted");
+                buy_crops_data();
+                finance();
+
+
+            });
+            con3.query(sql2, function(err, result) {
+                if (err) throw err;
+                console.log("Available crop updated");
+                cropsdata();
+
+            });
+            con3.query(sql3, function(err, result) {
+                if (err) throw err;
+                console.log("Total Balance updated");
+                finance();
+
+            });
+            con3.query(sql5, function(err, result) {
+                if (err) throw err;
+                console.log("Buy_balance Updated");
+                finance();
+
+            });
+            con3.query(sql6, function(err, result) {
+                if (err) throw err;
+                console.log("Buy_balance Updated");
+                finance();
+
+            });
+            con3.query(sql4, function(err, result) {
+                if (err) throw err;
+                var userId = JSON.stringify(result);
+                var json = JSON.parse(userId);
+                var final = json[0].user_id;
+                invoice_user = final;
+                console.log("user_id = ", final);
+                finance();
+                var sql5 = 'SELECT loan_user_id FROM user_loan where user_id = "' + invoice_user + '";';
+                con3.query(sql5, function(err, result) {
+                    if (err) throw err;
+                    var loanId = JSON.stringify(result);
+                    var json = JSON.parse(loanId);
+                    var loan_final = json[0].loan_user_id;
+                    invoice_loan = loan_final;
+
+                    console.log("loan_id = ", invoice_loan);
+                    console.log("price = ", total_money2);
+                    var sql7 = 'UPDATE loan_new SET Total_amount = Total_amount-' + parseInt(total_money) + ' where  loan_id =  "' + invoice_loan + '";';
+
+                    con3.query(sql7, function(err, result) {
+
+                        console.log("Loan amount updated");
+                        finance();
+
+                        // var sql8 = 'UPDATE buy_sell_price set pay_back =  pay_back +  "' + total_money + '";'; 
+                        var sql8 = 'UPDATE finance set pay_back =  pay_back +  "' + total_money + '";';
+
+                        con3.query(sql8, function(err, result) {
+                            finance();
+                        });
+
+                        var sql9 = 'UPDATE loan_new set payed_amount =  payed_amount +  ' + total_money + ' where  loan_id =  "' + invoice_loan + '";';
+                        con3.query(sql9, function(err, result) {
+                            finance();
+                        });
+                    });
+                });
+            });
+
+        });
+        if (user_contact != '' && crop_name != '' && new_quantity != '' && new_price != '') {
+            toggleLogin();
+        }
+
+
+    }
+
+    function buy_crops_data() {
+        var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new",
+        });
+        con.connect(function(err) {
+            if (err) throw err;
+            con.query("SELECT * FROM buy_crop_new", function(err, result) {
+                if (err) throw err;
+                console.log(result);
+                var string = JSON.stringify(result);
+                var json = JSON.parse(string);
+                console.log(json);
+                let table = '<table border="1" class="content-table-bc">';
+                table += "<tr><th>Sold Id</th><th>Crop Name</th><th>Quantity</th><th>Price Per Quintal</th><th>Date</th></tr>";
+                var x = json.length;
+                for (var i = 0; i < x; i++) {
+                    table = table + "<tr>";
+                    table = table + `<td>${json[i].buy_id}</td>`;
+                    table = table + `<td>${json[i].crop_name}</td>`;
+                    table = table + `<td>${json[i].quantity}</td>`;
+                    table = table + `<td>${json[i].price}</td>`;
+                    table = table + `<td>${json[i].Date}</td>`;
+
+                    table += `</tr>`;
+                }
+
+                table += "</table>";
+                document.getElementById("tab5").innerHTML = table;
+
+            });
+        });
+
+    }
+
+    buy_crops_data();
+
+    function add_new_crop(event) {
+
+
+        var crop_name = document.getElementById("new_crop_name").value;
+        var quantity = document.getElementById("new_quantity_name").value;
+        var price = document.getElementById("new_price_name").value;
+
+
+        /*************convert data to intiger********/
+
+        var new_quantity = parseInt(quantity);
+        var new_price = parseFloat(price);
+        console.log(crop_name);
+        console.log(new_quantity);
+        console.log(new_price);
+
+        var total_money = new_quantity * new_price;
+
+        var con3 = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new"
+        });
+        console.log(amount);
+        con3.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            //Insert a record in the "customers" table:
+            if (crop_name != '' && new_quantity != '' && new_price != '') {
+                console.log("Connected! data");
+                var sql = 'INSERT INTO available_crops_new(crop_name,quantity, price) VALUES ("' + crop_name + '","' + new_quantity + '","' + new_price + '");';
+                var sql3 = 'UPDATE finance f SET f.total_balance = f.total_balance - "' + parseInt(total_money) + '";';
+
+
+            }
+            con3.query(sql, function(err, result) {
+                add_new_crop();
+                if (err) throw err;
+                console.log("1 record inserted");
+                finance();
+
+            });
+            con3.query(sql3, function(err, result) {
+                if (err) throw err;
+                console.log("Total Balance updated");
+                finance();
+
+            });
+
+
+
+        });
+        cropsdata();
+    }
+
+    function Remove_user(event) {
+
+
+        var crop_name = document.getElementById("delete_user").value;
+
+
+        /*************convert data to intiger********/
+
+        var new_user_remove = parseInt(crop_name);
+
+        console.log(new_user_remove);
+
+        var con3 = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "desktop_new"
+        });
+        console.log(amount);
+        con3.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            //Insert a record in the "customers" table:
+            if (crop_name != '') {
+                console.log("Connected! data");
+                var sql = 'DELETE from users where contact = ' + new_user_remove + ';';
+            }
+            con3.query(sql, function(err, result) {
+                if (err) throw err;
+                console.log("1 record inserted");
+                tableshow();
+
+            });
+
+        });
+    }
+
+    function printDiv() {
+        var divContents = document.getElementById("Loan_invoice").innerHTML;
+        var a = window.open('', '', 'height=600, width=950');
+        a.document.write('<html>');
+
+        a.document.write(divContents);
+        a.document.write('</body></html>');
+        a.document.close();
+        a.print();
+    }
+</script>
+
+
+</body>
+
+</html>
